@@ -10,6 +10,7 @@ String icon = 'assets/images/icon.png';
 String ai = 'assets/images/Frame.png';
 String settings = 'assets/images/AdjustmentsOutline.png';
 String transcription = 'assets/images/TranslateOutline.png';
+String mic = 'assets/images/Microphone (2).png';
 
 List socials = [
   'assets/images/phone.png',
