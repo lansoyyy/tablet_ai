@@ -98,7 +98,7 @@ class _TextFieldWidgetState extends State<TextFieldWidget> {
             label: TextWidget(
               text: widget.label,
               fontSize: 18,
-              color: secondary,
+              color: Colors.black,
             ),
             hintStyle: const TextStyle(
               fontFamily: 'Regular',

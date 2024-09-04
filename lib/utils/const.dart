@@ -7,6 +7,10 @@ String label = 'assets/images/label.png';
 String avatar = 'assets/images/avatar.png';
 String icon = 'assets/images/icon.png';
 
+String ai = 'assets/images/Frame.png';
+String settings = 'assets/images/AdjustmentsOutline.png';
+String transcription = 'assets/images/TranslateOutline.png';
+
 List socials = [
   'assets/images/phone.png',
   'assets/images/apple.png',
