@@ -23,23 +23,8 @@ class _HomeScreenState extends State<HomeScreen> {
         child: SafeArea(
           child: Row(
             children: [
-              Expanded(
-                child: SizedBox(
-                    child: IndexedStack(
-                  index: selected,
-                  children: const [
-                    ChatTab(),
-                    SettingsTab(),
-                    TranscriptionTab(),
-                  ],
-                )),
-              ),
-              const VerticalDivider(
-                color: Colors.black,
-                thickness: 2,
-              ),
               SizedBox(
-                width: 275,
+                width: 100,
                 height: double.infinity,
                 child: Padding(
                   padding: const EdgeInsets.all(15.0),
@@ -54,26 +39,11 @@ class _HomeScreenState extends State<HomeScreen> {
                               selected = 0;
                             });
                           },
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            children: [
-                              Image.asset(
-                                ai,
-                                height: 35,
-                                color:
-                                    selected == 0 ? Colors.black : Colors.grey,
-                              ),
-                              const SizedBox(
-                                width: 20,
-                              ),
-                              TextWidget(
-                                text: 'AI Chat',
-                                fontSize: 20,
-                                fontFamily: 'Bold',
-                                color:
-                                    selected == 0 ? Colors.black : Colors.grey,
-                              ),
-                            ],
+                          child: Image.asset(
+                            selected == 0
+                                ? 'assets/images/selected/Frame.png'
+                                : 'assets/images/unselected/Frame (1).png',
+                            height: 50,
                           ),
                         ),
                       ),
@@ -85,26 +55,11 @@ class _HomeScreenState extends State<HomeScreen> {
                               selected = 1;
                             });
                           },
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            children: [
-                              Image.asset(
-                                settings,
-                                height: 35,
-                                color:
-                                    selected == 1 ? Colors.black : Colors.grey,
-                              ),
-                              const SizedBox(
-                                width: 20,
-                              ),
-                              TextWidget(
-                                text: 'Settings',
-                                fontSize: 20,
-                                fontFamily: 'Bold',
-                                color:
-                                    selected == 1 ? Colors.black : Colors.grey,
-                              ),
-                            ],
+                          child: Image.asset(
+                            selected == 1
+                                ? 'assets/images/selected/Frame 52 (1).png'
+                                : 'assets/images/unselected/Frame 52.png',
+                            height: 50,
                           ),
                         ),
                       ),
@@ -116,57 +71,58 @@ class _HomeScreenState extends State<HomeScreen> {
                               selected = 2;
                             });
                           },
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            children: [
-                              Image.asset(
-                                transcription,
-                                color:
-                                    selected == 2 ? Colors.black : Colors.grey,
-                                height: 35,
-                              ),
-                              const SizedBox(
-                                width: 20,
-                              ),
-                              TextWidget(
-                                text: 'Live Transcription',
-                                fontSize: 20,
-                                fontFamily: 'Bold',
-                                color:
-                                    selected == 2 ? Colors.black : Colors.grey,
-                              ),
-                            ],
+                          child: Image.asset(
+                            selected == 2
+                                ? 'assets/images/selected/Frame 55 (1).png'
+                                : 'assets/images/unselected/Frame 55.png',
+                            height: 50,
                           ),
                         ),
                       ),
-                      const Expanded(child: SizedBox()),
-                      selected == 2
-                          ? GestureDetector(
-                              onTap: () {
-                                showCustomDialog(context);
-                              },
-                              child: Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                children: [
-                                  TextWidget(
-                                    align: TextAlign.start,
-                                    text: 'Record\nYourself',
-                                    fontSize: 20,
-                                    fontFamily: 'Bold',
-                                    color: Colors.black,
-                                  ),
-                                  Image.asset(
-                                    mic1,
-                                    height: 50,
-                                  ),
-                                ],
-                              ),
-                            )
-                          : const SizedBox(),
+
+                      // const Expanded(child: SizedBox()),
+                      // selected == 2
+                      //     ? GestureDetector(
+                      //         onTap: () {
+                      //           showCustomDialog(context);
+                      //         },
+                      //         child: Row(
+                      //           mainAxisAlignment:
+                      //               MainAxisAlignment.spaceBetween,
+                      //           children: [
+                      //             TextWidget(
+                      //               align: TextAlign.start,
+                      //               text: 'Record\nYourself',
+                      //               fontSize: 20,
+                      //               fontFamily: 'Bold',
+                      //               color: Colors.black,
+                      //             ),
+                      //             Image.asset(
+                      //               mic1,
+                      //               height: 50,
+                      //             ),
+                      //           ],
+                      //         ),
+                      //       )
+                      //     : const SizedBox(),
                     ],
                   ),
                 ),
+              ),
+              const VerticalDivider(
+                color: Colors.black,
+                thickness: 2,
+              ),
+              Expanded(
+                child: SizedBox(
+                    child: IndexedStack(
+                  index: selected,
+                  children: const [
+                    ChatTab(),
+                    TranscriptionTab(),
+                    SettingsTab(),
+                  ],
+                )),
               ),
             ],
           ),

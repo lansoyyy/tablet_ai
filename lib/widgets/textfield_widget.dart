@@ -102,8 +102,8 @@ class _TextFieldWidgetState extends State<TextFieldWidget> {
             ),
             hintStyle: const TextStyle(
               fontFamily: 'Regular',
-              color: Colors.grey,
-              fontSize: 24,
+              color: Colors.black,
+              fontSize: 16,
             ),
             disabledBorder: OutlineInputBorder(
               borderSide: BorderSide(
